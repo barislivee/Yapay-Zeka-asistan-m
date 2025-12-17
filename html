@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesli AI Asistan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .assistant-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .assistant-section h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .assistant-section p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .widget-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+
+        footer {
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎙️ Sesli AI Asistan</h1>
+            <p class="subtitle">Sesli olarak konuşabileceğiniz yapay zeka asistanınız</p>
+        </header>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🗣️</div>
+                <div class="feature-title">Sesli İletişim</div>
+                <div class="feature-description">Doğal ses ile konuşun ve anında yanıt alın</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">Hızlı Yanıt</div>
+                <div class="feature-description">Gerçek zamanlı konuşma deneyimi</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <div class="feature-title">Türkçe Destek</div>
+                <div class="feature-description">Anadilinde rahatça konuşun</div>
+            </div>
+        </div>
+
+        <div class="assistant-section">
+            <h2>Asistanınızla Konuşmaya Başlayın</h2>
+            <p>Aşağıdaki butona tıklayarak sesli asistanınızı aktif edebilirsiniz</p>
+            <div class="widget-container">
+                <elevenlabs-convai agent-id="agent_4301kcnqgpxbecha3g8agx0r7p1z"></elevenlabs-convai>
+            </div>
+        </div>
+
+        <footer>
+            <p>🤖 Powered by ElevenLabs AI Technology</p>
+            <p>© 2024 Sesli AI Asistan - Tüm hakları saklıdır</p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+</body>
+</html>
